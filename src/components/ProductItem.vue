@@ -5,7 +5,7 @@
             <div><strong>Описание: </strong>{{item.body}}</div>
         </div>
         <div class="product_btns">
-            <MyButton>Удалить</MyButton>
+            <MyButton @click="$emit('remove', item)">Удалить</MyButton>
         </div>
     </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <ProductForm @create="createNewItem"/>
-        <ProductList :productItems="productItems" />
+        <ProductList :productItems="productItems" @remove="removeItem"/>
     </div>
 </template>
 
@@ -38,6 +38,9 @@ export default {
         createNewItem(item) {
             this.productItems.push(item)
         },
+        removeItem(item) {
+            this.productItems = this.productItems.filter(it => it.id !== item.id)
+        }
     },
  }
 </script>
